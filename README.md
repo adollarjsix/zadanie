@@ -1,0 +1,5 @@
+# zadanie
+
+```
+npm run dev
+```
