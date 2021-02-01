@@ -1,9 +1,11 @@
 const gulp = require('gulp');
-let concat = require('gulp-concat');
+const concat = require('gulp-concat');
+const less = require('gulp-less');
 
-function defaultTask() {
+function indexTask() {
 	return gulp.src([
 		'index_partials/index-top.html',
+		'index_partials/index-head.html',
 		'src/templates/*.js',
 		'index_partials/index-bottom.html'
 	])
@@ -11,4 +13,14 @@ function defaultTask() {
 	.pipe(gulp.dest('.'));
 }
 
-exports.default = defaultTask;
+function stylesTask() {
+	return gulp.src('src/styles/*.less')
+	.pipe(less())
+	.pipe(concat('styles.css'))
+	.pipe(gulp.dest('.'))
+}
+
+exports.default = gulp.series(
+	indexTask,
+	stylesTask
+);
