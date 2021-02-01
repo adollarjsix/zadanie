@@ -1,5 +1,5 @@
 import { route } from '../router';
 
-route('/', 'home', function() {});
+route('/', 'home', () => {});
 
-route('*', 'page404', function () {});
+route('*', 'page404', () => {});
