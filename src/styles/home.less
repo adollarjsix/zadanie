@@ -1,4 +1,54 @@
+@some-guy-size: 100px;
+
+@keyframes some-guy {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+  }
+
 .home {
-	color: blue;
-	background-image: url('https://source.unsplash.com/random');
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.form-container {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 450px;
+		width: 450px / 1.62;
+		background-color: white;
+		border-radius: 50px;
+		box-shadow: 0 20px 50px 10px rgba(0, 0, 0, .25);
+	}
+
+	.some-guy-container {
+		position: absolute;
+		top: -@some-guy-size / 2;
+		width: @some-guy-size;
+		height: @some-guy-size;
+		border-radius: 50%;
+		box-shadow: 0 0 25px 0 rgba(0, 0, 0, .2);
+		transition: all .25s;
+		cursor: pointer;
+		
+		&:hover {
+			transform: translate(0, -15px);
+		}
+
+		.some-guy {
+			width: @some-guy-size;
+			height: @some-guy-size;
+			border-radius: 50%;
+
+			&.is-animating {
+				animation-name: some-guy;
+				animation-duration: .5s;
+			}
+		}
+	}
 }
