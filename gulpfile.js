@@ -3,6 +3,7 @@ const concat = require('gulp-concat');
 const less = require('gulp-less');
 const webpack = require('webpack-stream');
 const connect = require('gulp-connect');
+const open = require('gulp-open');
 
 function webpackTask() {
   return gulp.src('src/app.js')
@@ -31,6 +32,13 @@ function stylesTask() {
 	.pipe(connect.reload());
 }
 
+function openLocalhost() {
+	return gulp.src(__filename)
+	.pipe(open({
+		uri: 'http://localhost:8080/'
+	}));
+}
+
 const build = gulp.series(
 	webpackTask,
 	indexTask,
@@ -53,6 +61,7 @@ exports.watch = watch;
 
 exports.default = gulp.series(
 	build,
+	openLocalhost,
 	serve,
 	watch
 );
