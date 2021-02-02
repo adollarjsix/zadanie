@@ -1,3 +1,5 @@
+@import '_variables';
+
 @some-guy-size: 100px;
 
 @keyframes rotate {
@@ -98,13 +100,13 @@
 		transition: all .25s;
 		cursor: pointer;
 		
-		@media (min-width: 500px) {
+		@media (min-width: @breakpoint) {
 			&:hover {
 				transform: translate(0, -15px);
 			}
 		}
 
-		@media (max-width: 500px) {
+		@media (max-width: @breakpoint) {
 			top: -@some-guy-size / 8;
 		}
 
@@ -143,7 +145,7 @@
 		h2 {
 			text-align: center;
 
-			@media (max-width: 500px) {
+			@media (max-width: @breakpoint) {
 				transform: translate(0, 30px);
 			}
 		}
