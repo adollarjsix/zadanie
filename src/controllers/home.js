@@ -30,7 +30,8 @@ export default function homeController() {
                 alert('error!');
                 return;
             } else {
-                window.location.assign('/#/loggedin');
+                sessionStorage.setItem('sessionId', data.token)
+                location.assign('/#/loggedin');
             }
         })
     });
