@@ -16,5 +16,11 @@
 				<p class="where">Surprise? Where? =)</p>
 			</form>
 		</div>
+		<div id="error-container">
+			<div class="error">
+				<span class="error-icon">!</span>
+				<span class="error-message">Wrong password!</span>
+			</div>
+		</div>
 	</div>
 </script>

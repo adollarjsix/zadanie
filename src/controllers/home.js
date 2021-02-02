@@ -27,12 +27,15 @@ export default function homeController() {
             return response.json();
         }).then((data) => {
             if(data.error) {
-                alert('error!');
-                return;
+                document.getElementById('error-container').classList.add('visible');
             } else {
                 sessionStorage.setItem('sessionId', data.token)
                 location.assign('/#/loggedin');
             }
         })
+    });
+
+    this.$on('#error-container', 'click', (event) => {
+        event.target.classList.remove('visible');
     });
 }
