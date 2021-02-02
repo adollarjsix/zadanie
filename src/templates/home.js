@@ -7,11 +7,11 @@
 			<form>
 				<h1>Hi,</h1>
 				<h2>Zwolnieni z Teorii!</h2>
-				<label for="username">Nazwa użytkownika:</label>
+				<label for="username">User name:</label>
 				<input type="text" id="username" name="username"></input>
-				<label for="password">Hasło:</label>
+				<label for="password">Password:</label>
 				<input type="password" id="password" name="password"></input>
-				<input type="submit" value="Wyślij"></input>
+				<input type="submit" value="Log in"></input>
 				<span class="flex"></span>
 				<p class="where">Surprise? Where? =)</p>
 			</form>
