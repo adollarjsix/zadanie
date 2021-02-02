@@ -1,0 +1,40 @@
+@gray: rgb(30,30,30);
+@gray-light: rgb(200,200,200);
+
+body.some-mode {
+    color: white !important;
+
+    .form-container,
+    .error,
+    .logged-in-window {
+        background-color: @gray !important;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        background-color: @gray-light !important;
+
+        &:focus {
+            background-color: white !important;
+        }
+    }
+
+    input[type="submit"] {
+        background-color: @gray-light !important;
+
+        &:hover {
+            background-color: white !important;
+        }
+    }
+}
+
+.form-container,
+.error,
+.logged-in-window,
+label,
+p,
+h1,
+h2,
+span {
+    transition: all .5s;
+}

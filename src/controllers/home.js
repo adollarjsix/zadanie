@@ -11,6 +11,8 @@ export default function homeController() {
 		if(!event.target.classList.contains('is-animating')) {
 			event.target.classList.add('is-animating');
 		}
+
+		document.body.classList.toggle('some-mode');
 	});
 
 	this.$on('.some-guy', 'animationend', (event) => {
