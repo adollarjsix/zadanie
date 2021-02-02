@@ -3,6 +3,10 @@ import Request from '../services/request';
 export default function homeController() {
 	const request = new Request();
 
+	this.$on('#error-container', 'click', (event) => {
+		request.hideError();
+	});
+
 	this.$on('.some-guy', 'click', (event) => {
 		if(!event.target.classList.contains('is-animating')) {
 			event.target.classList.add('is-animating');
@@ -28,16 +32,8 @@ export default function homeController() {
 				password
 			})
 		}]).then((data) => {
-			if(data.error) {
-				document.getElementById('error-container').classList.add('visible');
-			} else {
-				sessionStorage.setItem('sessionId', data.token)
-				location.assign('/#/loggedin');
-			}
-		})
-	});
-
-	this.$on('#error-container', 'click', (event) => {
-		event.target.classList.remove('visible');
+			sessionStorage.setItem('sessionId', data.token)
+			location.assign('/#/loggedin');
+		});
 	});
 }

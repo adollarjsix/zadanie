@@ -5,7 +5,15 @@ export default class Request {
 
     endLoading() {
         document.getElementById('loader-container').classList.remove('visible');
-    }
+	}
+	
+	showError() {
+		document.getElementById('error-container').classList.add('visible');
+	}
+
+	hideError() {
+		document.getElementById('error-container').classList.remove('visible');
+	}
 
     fetch(params) {
 		this.startLoading();
@@ -15,7 +23,12 @@ export default class Request {
 			return response.json();
 		}).then((data) => {
 			this.endLoading();
-			return data;
+			if(data.error) {
+				this.showError();
+				return;
+			} else {
+				return data;
+			}
 		});
     }
 }
