@@ -1,4 +1,4 @@
-import { route } from '../router';
+import { route } from '../vendor/router';
 import homeController from './controllers/home';
 import loggedInController from './controllers/loggedin';
 import page404Controller from './controllers/page404';
