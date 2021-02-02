@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
 body {
     margin: 0;
+    font-family: 'Lato', sans-serif;
 }
 
 html,
@@ -14,4 +17,54 @@ body,
     background-image: url('https://source.unsplash.com/random');
     background-position: center;
     background-size: cover;
+}
+
+form {
+    width: 100%;
+    box-sizing: border-box;
+
+    label {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        height: 40px;
+        border: 0;
+        outline: 0;
+        background-color: rgba(0,0,0,.075);
+        border-radius: 15px; 
+        margin-bottom: 10px;
+        transition: all .4s;
+        padding: 0 15px;
+        box-sizing: border-box;
+
+        &:focus {
+            box-shadow: 0 0 25px 0 rgba(0, 0, 0, .1);
+            background-color: white;
+        }
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        height: 50px;
+        border: 0.5px solid rgba(0,0,0,.2);
+        outline: 0;
+        background-color: rgba(0,0,0,.025);
+        border-radius: 15px;
+        margin-top: 15px;
+        cursor: pointer;
+        transition: all .4s;
+
+        &:hover {
+            box-shadow: 0 5px 25px -10px rgba(0, 0, 0, .2);
+            border: 0.5px solid rgba(0,0,0,.1);
+        }
+    }
+}
+
+.flex {
+    flex-grow: 1;
 }
