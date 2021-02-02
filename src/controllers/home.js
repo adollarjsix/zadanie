@@ -1,9 +1,13 @@
 export default function homeController() {
     this.$on('.some-guy', 'click', (event) => {
-        event.target.classList.toggle('is-animating');
+        if(!event.target.classList.contains('is-animating')) {
+            event.target.classList.add('is-animating');
+        }
     });
 
     this.$on('.some-guy', 'animationend', (event) => {
-        event.target.classList.toggle('is-animating');
+        if(event.target.classList.contains('is-animating')) {
+            event.target.classList.remove('is-animating');
+        }
     });
 }
