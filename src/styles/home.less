@@ -1,19 +1,20 @@
 @some-guy-size: 100px;
 
-@keyframes some-guy {
+@keyframes rotate {
 	from {
 		transform: rotate(0deg);
 	}
 	to {
 		transform: rotate(360deg);
 	}
-  }
+}
 
 .home {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 
+	#loader-container,
 	#error-container {
 		position: absolute;
 		top: 0;
@@ -24,7 +25,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		cursor: pointer;
 		opacity: 0;
 		visibility: hidden;
 		transition: all .5s;
@@ -33,6 +33,23 @@
 			visibility: initial;
 			opacity: 1;
 		}
+	}
+
+	#loader-container {
+		.loader {
+			font-size: 100px;
+			color: white;
+			display: inline-block;
+			animation-name: rotate;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+			transform-origin: 50% 60%;
+		}
+	}
+
+	#error-container {
+		cursor: pointer;
 
 		.error {
 			display: flex;
@@ -91,7 +108,7 @@
 			border-radius: 50%;
 
 			&.is-animating {
-				animation-name: some-guy;
+				animation-name: rotate;
 				animation-duration: .5s;
 			}
 		}

@@ -22,5 +22,8 @@
 				<span class="error-message">Wrong password!</span>
 			</div>
 		</div>
+		<div id="loader-container">
+			<span class="loader">▲</span>
+		</div>
 	</div>
 </script>

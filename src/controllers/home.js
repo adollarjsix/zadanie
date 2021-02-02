@@ -1,4 +1,12 @@
 export default function homeController() {
+    const startLoading = () => {
+        document.getElementById('loader-container').classList.add('visible');
+    };
+
+    const endLoading = () => {
+        document.getElementById('loader-container').classList.remove('visible');
+    };
+
     this.$on('.some-guy', 'click', (event) => {
         if(!event.target.classList.contains('is-animating')) {
             event.target.classList.add('is-animating');
@@ -15,7 +23,8 @@ export default function homeController() {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
-        event.preventDefault();
+		event.preventDefault();
+		startLoading();
 
         fetch('https://zwzt-zadanie.netlify.app/api/login', {
             method: 'POST',
@@ -26,6 +35,8 @@ export default function homeController() {
         }).then((response) => {
             return response.json();
         }).then((data) => {
+			endLoading();
+			
             if(data.error) {
                 document.getElementById('error-container').classList.add('visible');
             } else {
