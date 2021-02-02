@@ -23,7 +23,7 @@
 			</div>
 		</div>
 		<div id="loader-container">
-			<span class="loader">▲</span>
+			<span class="loader">◌</span>
 		</div>
 	</div>
 </script>
