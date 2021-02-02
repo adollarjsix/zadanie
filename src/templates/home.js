@@ -4,7 +4,7 @@
 			<div class="some-guy-container">
 				<img class="some-guy" src="assets/images/some-guy.jpg"/>
 			</div>
-			<form>
+			<form id="main-form">
 				<h1>Hi,</h1>
 				<h2>Zwolnieni z Teorii!</h2>
 				<label for="username">User name:</label>
